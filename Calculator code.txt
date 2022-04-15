@@ -1,0 +1,56 @@
+#include<stdio.h>
+int main ()
+{
+  char opt;
+  float n1,n2;
+  float res;
+  printf ("Choose an operator(+,-,*,/)\n");
+  scanf ("%c", &opt);
+  if (opt == '+')
+    {
+      printf ("You have selected addition");
+    }
+  else if (opt == '-')
+    {
+      printf ("You have selected subtraction");
+    }
+  else if (opt == '*')
+    {
+      printf ("You have selected multipication");
+    }
+  else if (opt == '/')
+    {
+      printf ("You have selected division");
+    }
+  printf ("\nEnter the first number:");
+  scanf ("%f", &n1);
+  printf ("\nEnter the second number:");
+  scanf ("%f", &n2);
+  switch (opt)
+    {
+    case '+':
+      res = n1 + n2;
+      printf ("Addition of %0.2f and %0.2f is %.2f", n1, n2, res);
+      break;
+    case '-':
+      res = n1 - n2;
+      printf ("Subtraction of %0.2f and %0.2f is %.2f", n1, n2, res);
+      break;
+    case '*':
+      res = n1 * n2;
+      printf ("Multiplication of %0.2f and %0.2f is %.2f", n1, n2, res);
+      break;
+    case '/':
+      if (n2 == 0)
+	{
+	  printf ("\nDivisor cannot be zero. Please enter another value");
+	  scanf ("%0.2f", &n2);
+	}
+      res = n1 / n2;
+      printf ("Division of %0.2f and %0.2f is %0.2f", n1, n2, res);
+      break;
+    default:
+      printf ("Error! Please check the options");
+    }
+  return 0;
+}
